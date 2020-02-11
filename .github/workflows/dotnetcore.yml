@@ -1,4 +1,4 @@
-name: .NET Core
+name: Build
 
 on: [push]
 
@@ -8,11 +8,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Setup .NET Core
+      - name: Setup .NET Core 3.1.101
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 3.1.101
-      - name: Build with dotnet
+      - name: Build Smart Fleet Management Services
         run: dotnet build ./SmartFleetManagement.Services --configuration Release
-      - name: Run tests
-        run: dotnet build ./SmartFleetManagement.Tests
