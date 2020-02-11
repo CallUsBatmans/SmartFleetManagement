@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartFleetManagement.Services", "SmartFleetManagement.Services\SmartFleetManagement.Services.csproj", "{0AB49C89-CABC-4527-98A9-8E5FC3E5014A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartFleetManagement.Domain", "SmartFleetManagement.Domain\SmartFleetManagement.Domain.csproj", "{5E3146D2-C888-4991-9D99-B3DA0CABD674}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartFleetManagement.Tests", "SmartFleetManagement.Tests\SmartFleetManagement.Tests.csproj", "{0DA65C5E-5092-44F1-A5A9-E5230A0B3F01}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{34B61723-742B-4262-9B13-BE020EC303BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartFleetManagement.DataAccess", "SmartFleetManagement.DataAccess\SmartFleetManagement.DataAccess.csproj", "{A8E87D52-6BC0-4304-8D7C-F846E7C73EB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartFleetManagement.TokenIssuer", "SmartFleetManagement.TokenIssuer\SmartFleetManagement.TokenIssuer.csproj", "{508E648C-F080-40C5-A94C-0DCA7146C29C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0AB49C89-CABC-4527-98A9-8E5FC3E5014A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AB49C89-CABC-4527-98A9-8E5FC3E5014A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AB49C89-CABC-4527-98A9-8E5FC3E5014A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AB49C89-CABC-4527-98A9-8E5FC3E5014A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E3146D2-C888-4991-9D99-B3DA0CABD674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E3146D2-C888-4991-9D99-B3DA0CABD674}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E3146D2-C888-4991-9D99-B3DA0CABD674}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E3146D2-C888-4991-9D99-B3DA0CABD674}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DA65C5E-5092-44F1-A5A9-E5230A0B3F01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DA65C5E-5092-44F1-A5A9-E5230A0B3F01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DA65C5E-5092-44F1-A5A9-E5230A0B3F01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DA65C5E-5092-44F1-A5A9-E5230A0B3F01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34B61723-742B-4262-9B13-BE020EC303BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34B61723-742B-4262-9B13-BE020EC303BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34B61723-742B-4262-9B13-BE020EC303BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34B61723-742B-4262-9B13-BE020EC303BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8E87D52-6BC0-4304-8D7C-F846E7C73EB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8E87D52-6BC0-4304-8D7C-F846E7C73EB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8E87D52-6BC0-4304-8D7C-F846E7C73EB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8E87D52-6BC0-4304-8D7C-F846E7C73EB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{508E648C-F080-40C5-A94C-0DCA7146C29C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{508E648C-F080-40C5-A94C-0DCA7146C29C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{508E648C-F080-40C5-A94C-0DCA7146C29C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{508E648C-F080-40C5-A94C-0DCA7146C29C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8A3F7145-8CBC-4800-96A0-42CE618E0069}
+	EndGlobalSection
+EndGlobal
