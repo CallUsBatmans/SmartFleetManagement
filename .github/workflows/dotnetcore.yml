@@ -13,6 +13,6 @@ jobs:
         with:
           dotnet-version: 2.2.108
       - name: Build with dotnet
-        run: dotnet build ..\..\SmartFleetManagement.Services --configuration Release
+        run: dotnet build .\SmartFleetManagement.Services --configuration Release
       - name: Run tests
-        run: dotnet build ..\..\SmartFleetManagement.Tests
+        run: dotnet build .\SmartFleetManagement.Tests
