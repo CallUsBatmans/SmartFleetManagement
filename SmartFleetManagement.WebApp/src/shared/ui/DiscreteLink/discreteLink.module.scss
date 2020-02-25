@@ -1,0 +1,12 @@
+@import "../../../css/colors.scss";
+
+.discreteLink {
+  color: $dark-gray;
+  border-bottom: 1px dotted;
+  border-color: transparent;
+
+  &:hover {
+    color: $dark-gray;
+    border-color: $blue;
+  }
+}

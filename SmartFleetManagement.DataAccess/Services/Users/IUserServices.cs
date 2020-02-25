@@ -5,6 +5,6 @@ namespace SmartFleetManagement.DataAccess.Services.Users
 {
     public interface IUserServices
     {
-        Task<User> GetUser(string username, string password);
+        Task<(User user, string roleCode)> GetUser(string username, string password);
     }
 }

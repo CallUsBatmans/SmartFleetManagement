@@ -1,0 +1,10 @@
+{
+  "login": {
+    "title": "Welcome,",
+    "subtitle": "please log in into your account",
+    "username": "Username",
+    "password": "Password",
+    "rememberMe": "Remember me",
+    "login": "Login"
+  }
+}

@@ -100,9 +100,6 @@ namespace SmartFleetManagement.Services.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<string>("ConfirmPassword")
-                        .HasColumnType("text");
-
                     b.Property<string>("Email")
                         .HasColumnType("text");
 
@@ -134,9 +131,6 @@ namespace SmartFleetManagement.Services.Migrations
                     b.Property<string>("Code")
                         .HasColumnType("text");
 
-                    b.Property<string>("Description")
-                        .HasColumnType("text");
-
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
@@ -147,24 +141,27 @@ namespace SmartFleetManagement.Services.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("6f32b29c-f7d2-4d82-937a-01d91802113b"),
-                            Code = "role.superuser",
-                            Description = "The biggest role of an user",
-                            Name = "Superuser"
+                            Id = new Guid("b38fc092-1181-47c3-92dc-66d4bf19406a"),
+                            Code = "1110111111",
+                            Name = "superuser"
                         },
                         new
                         {
-                            Id = new Guid("ba8eefe7-3caf-4d8c-9080-295b11b2039e"),
-                            Code = "role.admin",
-                            Description = "Has administrative roles",
-                            Name = "Admin"
+                            Id = new Guid("585919ad-712c-4840-9239-0f80ba98898e"),
+                            Code = "1110111111",
+                            Name = "usersadministrator"
                         },
                         new
                         {
-                            Id = new Guid("c6a0390f-72c9-41b5-b28c-bb5b153f54ff"),
-                            Code = "role.user",
-                            Description = "Standard user of the app",
-                            Name = "User"
+                            Id = new Guid("a1d7bbc4-365f-41fe-9a32-1f16af38860f"),
+                            Code = "110111111",
+                            Name = "writer"
+                        },
+                        new
+                        {
+                            Id = new Guid("9d5947a5-69d4-41bb-b941-6bebeaf7712c"),
+                            Code = "10110110",
+                            Name = "guest"
                         });
                 });
 

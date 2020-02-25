@@ -1,0 +1,22 @@
+@import "../../../css/colors.scss";
+
+.languageSelector {
+  position: relative;
+  width: 100%;
+  text-align: right;
+
+  ul {
+    list-style: none;
+
+    li {
+      display: inline;
+      margin: 0 0 10px 0;
+
+      &:not(:last-child)::after {
+        content: " | ";
+        font-size: 1.2em;
+        padding: 0 0.2rem;
+      }
+    }
+  }
+}

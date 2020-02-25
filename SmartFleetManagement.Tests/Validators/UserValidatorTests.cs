@@ -7,22 +7,22 @@ namespace SmartFleetManagement.Tests.Validators
 {
     internal class UserValidatorTests
     {
-        private UserValidator userValidator;
+        private UserValidator _userValidator;
 
         [SetUp]
         public void Setup()
         {
-            this.userValidator = new UserValidator();
+            this._userValidator = new UserValidator();
         }
 
         [Test]
         public void UserValidatorShouldNotHaveAnyErrorWhenModelIsValid()
         {
             // Arrange
-            var user = new User("valid_test", "valid_test@test.com", "valid_username", "some_valid_password", "some_valid_password", new UserRole());
+            var user = new User("valid_test", "valid_test@test.com", "valid_username", "some_valid_password");
 
             // Act
-            var result = userValidator.TestValidate(user);
+            var result = _userValidator.TestValidate(user);
 
             // Assert
             result.ShouldNotHaveAnyValidationErrors();
@@ -33,10 +33,10 @@ namespace SmartFleetManagement.Tests.Validators
         public void UserValidatorShouldThrowErrorWhenNameIsInvalid(string name, string expectedMessage)
         {
             // Arrange
-            var user = new User(name, "test@test.com", "test_username", "some_password", "some_password", new UserRole());
+            var user = new User(name, "test@test.com", "test_username", "some_password");
 
             // Act
-            var result = userValidator.TestValidate(user);
+            var result = _userValidator.TestValidate(user);
 
             // Assert
             result.ShouldHaveValidationErrorFor(x => x.Name).WithErrorMessage(expectedMessage);
@@ -48,10 +48,10 @@ namespace SmartFleetManagement.Tests.Validators
         public void UserValidatorShouldThrowErrorWhenEmailIsInvalid(string email, string expectedMessage)
         {
             // Arrange
-            var user = new User("Test", email, "test_username", "some_password", "some_password", new UserRole());
+            var user = new User("Test", email, "test_username", "some_password");
 
             // Act
-            var result = userValidator.TestValidate(user);
+            var result = _userValidator.TestValidate(user);
 
             // Assert
             result.ShouldHaveValidationErrorFor(x => x.Email).WithErrorMessage(expectedMessage);
@@ -62,10 +62,10 @@ namespace SmartFleetManagement.Tests.Validators
         public void UserValidatorShouldThrowErrorWhenUsernameIsInvalid(string username, string expectedMessage)
         {
             // Arrange
-            var user = new User("Test", "test@test.com", username, "some_password", "some_password", new UserRole());
+            var user = new User("Test", "test@test.com", username, "some_password");
 
             // Act
-            var result = userValidator.TestValidate(user);
+            var result = _userValidator.TestValidate(user);
 
             // Assert
             result.ShouldHaveValidationErrorFor(x => x.Username).WithErrorMessage(expectedMessage);
@@ -77,28 +77,13 @@ namespace SmartFleetManagement.Tests.Validators
         public void UserValidatorShouldThrowErrorWhenPasswordIsInvalid(string password, string expectedMessage)
         {
             // Arrange
-            var user = new User("test", "test@test.com", "test_username", password, "some_password", new UserRole());
+            var user = new User("test", "test@test.com", "test_username", password);
 
             // Act
-            var result = userValidator.TestValidate(user);
+            var result = _userValidator.TestValidate(user);
 
             // Assert
             result.ShouldHaveValidationErrorFor(x => x.Password).WithErrorMessage(expectedMessage);
-        }
-
-        [TestCase("some_valid_password", "some_invalid_password", "Passwords do not match")]
-        [TestCase("some_valid_password", null, "Confirm Password can not be null")]
-        [TestCase("some_valid_password", "", "Confirm Password can not be empty")]
-        public void UserValidatorShouldThrowErrorWhenConfirmPasswordIsInvalid(string password, string confirmPassword, string expectedMessage)
-        {
-            // Arrange
-            var user = new User("test", "test@test.com", "test_username", password, confirmPassword, new UserRole());
-
-            // Act
-            var result = userValidator.TestValidate(user);
-
-            // Assert
-            result.ShouldHaveValidationErrorFor(x => x.ConfirmPassword).WithErrorMessage(expectedMessage);
         }
     }
 }

@@ -25,7 +25,7 @@ namespace SmartFleetManagement.Services.Repositories.Authentication
 
         public async Task<AuthenticatedUserViewModel> Authenticate(AuthenticateModel credentials)
         {
-            var user = await GetUserToAuthenticate(credentials);
+            var (user, roleCode) = await GetUserToAuthenticate(credentials);
 
             if (!user.DoesExist())
             {
@@ -33,12 +33,12 @@ namespace SmartFleetManagement.Services.Repositories.Authentication
             }
 
             var (token, role) =
-                _tokenIssuer.IssueAuthorizationToken(user, _appSettings.Secret, _appSettings.Expires);
+                _tokenIssuer.IssueAuthorizationToken(user, roleCode, _appSettings.Secret, _appSettings.Expires);
 
             return new AuthenticatedUserViewModel(token, role);
         }
 
-        private async Task<User> GetUserToAuthenticate(AuthenticateModel credentials)
+        private async Task<(User user, string roleCode)> GetUserToAuthenticate(AuthenticateModel credentials)
         {
             return await _userServices.GetUser(credentials.Username, credentials.Password);
         }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.OData;
@@ -7,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SmartFleetManagement.Domain;
+using SmartFleetManagement.Domain.Security;
 using SmartFleetManagement.Services.Cache;
 
 namespace SmartFleetManagement.Services.Controllers
@@ -29,19 +29,27 @@ namespace SmartFleetManagement.Services.Controllers
         [Route("values")]
         public async Task<IActionResult> Get()
         {
-            var roles = _cache.ReadFromCache<IEnumerable<UserRole>>(nameof(UserRole));
-
+            var roles = _cache.ReadFromCache<IEnumerable<Role>>(nameof(Role)).ToList();
             //var roles = _context.UserRoles.Select(x => x).ToList();
 
-            //await _context.Users.AddAsync(new User("superuser", "superuser@test.com", "superuser", "testsuperuser", "testsuperuser", roles.SingleOrDefault(x => x.Code == "role.superuser")));
-            //await _context.Users.AddAsync(new User("admin", "admin@test.com", "admin", "testadminuser", "testadminuser",
-            //    roles.SingleOrDefault(x => x.Code == "role.admin")));
-            //await _context.Users.AddAsync(new User("user", "user@test.com", "user", "testuseruser", "testuseruser",
-            //    roles.SingleOrDefault(x => x.Code == "role.user")));
+            var users = new List<User>()
+            {
+                new User("superuser", "superuser@test.com", "superuser", "testsuperuser"),
+                new User("admin", "admin@test.com", "admin", "testadminuser"),
+                new User("user", "user@test.com", "user", "testuseruser")
+            };
 
-            //await _context.SaveChangesAsync();
+            await _context.Users.AddRangeAsync(users);
 
-            return Ok(roles);
+            await _context.SaveChangesAsync();
+
+            var usersList = _context.Users.Select(x => x).ToList();
+
+            return Ok(new
+            {
+                roles = roles,
+                users = usersList
+            });
         }
 
         [Authorize]

@@ -26,7 +26,7 @@ namespace SmartFleetManagement.Services.Cache
 
         public static void Initialize(SmartFleetManagementDbContext context)
         {
-            CacheEntity(nameof(UserRole), () => context.UserRoles.Select(x => x).ToList());
+            CacheEntity(nameof(Role), () => context.UserRoles.Select(x => x).ToList());
             CacheEntity(nameof(User), () => context.Users.Select(x => x).ToList());
         }
     }

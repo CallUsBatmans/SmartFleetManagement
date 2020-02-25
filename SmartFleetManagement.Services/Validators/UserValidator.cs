@@ -27,14 +27,6 @@ namespace SmartFleetManagement.Services.Validators
                 .WithMessage("Password can not be null")
                 .NotEmpty()
                 .WithMessage("Password can not be empty");
-            RuleFor(x => x.ConfirmPassword)
-                .Equal(x => x.Password)
-                .WithMessage("Passwords do not match")
-                .When(x => !string.IsNullOrWhiteSpace(x.Password))
-                .NotNull()
-                .WithMessage("Confirm Password can not be null")
-                .NotEmpty()
-                .WithMessage("Confirm Password can not be empty");
         }
     }
 }

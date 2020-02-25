@@ -3,22 +3,23 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SmartFleetManagement.Domain
 {
-    public class UserRole
+    public class UserAddress
     {
         [Key]
         public Guid Id { get; set; }
-        public User User { get; set; }
-        public Role Role { get; set; }
 
-        protected UserRole()
+        public User User { get; set; }
+        public Address Address { get; set; }
+
+        protected UserAddress()
         {
             Id = Guid.NewGuid();
         }
 
-        public UserRole(User user, Role role)
+        public UserAddress(User user, Address address)
         {
             User = user;
-            Role = role;
+            Address = address;
         }
     }
 }

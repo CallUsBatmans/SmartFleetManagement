@@ -1,0 +1,56 @@
+@import "../../../css/colors.scss";
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2.5rem;
+
+  h1 {
+    padding: 1rem 1rem 0 1rem;
+    margin: 0;
+  }
+
+  h5 {
+    padding: 0 0 1rem 0;
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .roundInput {
+    width: 100%;
+
+    input {
+      margin-bottom: 1rem !important;
+      border: none !important;
+      border-bottom: 1px $light-gray solid !important;
+      border-radius: 0 !important;
+      transition: all 0.3s ease-in-out !important;
+
+      &:focus,
+      &:hover {
+        border-bottom: 1px $blue solid !important;
+      }
+    }
+  }
+
+  .icon {
+    position: absolute;
+    top: 0.9rem;
+    left: 1rem;
+    font-size: 1em;
+    overflow: hidden;
+    color: $gray;
+  }
+
+  .loginBtn {
+    margin: 0.5rem 0 !important;
+    color: $white !important;
+    border-radius: 2rem !important;
+    font-weight: 400 !important;
+    text-transform: uppercase !important;
+    transition: all 0.2s ease-in-out !important;
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "login": {
+    "title": "Bun venit,",
+    "subtitle": "vă rugăm să vă conectați la contul dvs.",
+    "username": "Utilizator",
+    "password": "Parolă",
+    "rememberMe": "Ține-mă minte",
+    "login": "Autentificare"
+  }
+}
