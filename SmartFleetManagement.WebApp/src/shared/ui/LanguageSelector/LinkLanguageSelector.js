@@ -25,11 +25,9 @@ const LinkLanguageSelector = props => {
   );
 
   return (
-    <div className={styles.languageSelector}>
-      <ul>
-        {languages}
-      </ul>
-    </div>
+    <ul className={styles.languageSelector}>
+      {languages}
+    </ul>
   );
 };
 

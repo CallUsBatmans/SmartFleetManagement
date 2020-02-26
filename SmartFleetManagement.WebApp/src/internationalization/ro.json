@@ -5,6 +5,13 @@
     "username": "Utilizator",
     "password": "Parolă",
     "rememberMe": "Ține-mă minte",
-    "login": "Autentificare"
+    "login": "Autentificare",
+    "forgotPassword": "Ai uitat parola?",
+    "createAccount": "Creează un cont nou",
+    "forgotPasswordTitle": "Resetează parola",
+    "forgotPasswordSubtitle": "Veți primi un link pentru a crea o nouă parolă prin email",
+    "usernameOrEmail": "Adresa de email sau numele de utilizator",
+    "resetPassword": "Resetează parola",
+    "signIn": "Autentificare"
   }
 }

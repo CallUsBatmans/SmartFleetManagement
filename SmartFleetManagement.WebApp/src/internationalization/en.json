@@ -5,6 +5,13 @@
     "username": "Username",
     "password": "Password",
     "rememberMe": "Remember me",
-    "login": "Login"
+    "login": "Login",
+    "forgotPassword": "Forgot your password?",
+    "createAccount": "Create new account",
+    "forgotPasswordTitle": "Reset your password",
+    "forgotPasswordSubtitle": "You will receive a link to create a new password via email",
+    "usernameOrEmail": "Email address or Username",
+    "resetPassword": "Reset password",
+    "signIn": "Sign in"
   }
 }

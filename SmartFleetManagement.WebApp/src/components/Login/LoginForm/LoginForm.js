@@ -6,14 +6,14 @@ import { Form } from 'react-bootstrap';
 import { Button, Input, Checkbox } from 'semantic-ui-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserTie, faLock } from '@fortawesome/free-solid-svg-icons';
-import LinkLanguageSelector from '../../../shared/ui/LanguageSelector/LinkLanguageSelector';
+import LoginFormFooter from './LoginFormFooter/LoginFormFooter';
+import PropTypes from 'prop-types';
 
 const LoginForm = props => {
   const { t } = useTranslation(namespaces.login)
 
   return (
     <Form className={styles.form}>
-      <LinkLanguageSelector />
       <h1>{t("title")}</h1>
       <h5>{t("subtitle")}</h5>
       <Input
@@ -34,7 +34,9 @@ const LoginForm = props => {
         type="password"
         autoComplete="current-password"
       />
-      <Checkbox toggle label={t("rememberMe")} />
+      <div className={styles.rememberMe}>
+        <Checkbox toggle label={t("rememberMe")} />
+      </div>
       <Button
         fluid
         className={styles.loginBtn}
@@ -43,8 +45,17 @@ const LoginForm = props => {
       >
         {t("login")}
       </Button>
+      <LoginFormFooter
+        onCreateAccount={props.onCreateAccount}
+        onForgotPassword={props.onForgotPassword}
+      />
     </Form>
   )
+};
+
+LoginForm.propTypes = {
+  onCreateAccount: PropTypes.func.isRequired,
+  onForgotPassword: PropTypes.func.isRequired
 };
 
 export default LoginForm;
