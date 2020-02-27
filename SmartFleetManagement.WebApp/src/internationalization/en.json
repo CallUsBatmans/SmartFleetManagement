@@ -12,6 +12,15 @@
     "forgotPasswordSubtitle": "You will receive a link to create a new password via email",
     "usernameOrEmail": "Email address or Username",
     "resetPassword": "Reset password",
-    "signIn": "Sign in"
+    "signIn": "Sign in",
+    "hidePassword": "Hide password",
+    "showPassword": "Show password"
+  },
+  "validation": {
+    "required": "Field is mandatory",
+    "email": "Email is invalid"
+  },
+  "clearIcon": {
+    "clear": "Clear"
   }
 }

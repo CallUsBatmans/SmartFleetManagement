@@ -1,8 +1,10 @@
 @import "../../../css/colors.scss";
 @import "../../../css/animations.scss";
+@import "../../../css/mixins.scss";
 
 .form {
   @include slideRightToLeft(250ms);
+  width: 100%;
 
   h1 {
     padding: 1rem 1rem 0 1rem;
@@ -15,19 +17,29 @@
     font-weight: 500;
   }
 
-  .roundInput {
-    width: 100%;
+  .customInput {
+    @include inputWithUnderline(200ms);
+    position: relative;
 
-    input {
-      margin-bottom: 1rem !important;
-      border: none !important;
-      border-bottom: 1px $light-gray solid !important;
-      border-radius: 0 !important;
-      transition: all 0.3s ease-in-out !important;
+    .toTransparent {
+      background: none;
+      border: none;
+    }
 
-      &:focus,
+    .showPasswordIcon {
+      font-size: 1.4em;
+
       &:hover {
-        border-bottom: 1px $blue solid !important;
+        cursor: pointer;
+
+        path {
+          fill: $gray;
+        }
+      }
+
+      path {
+        fill: lighten($color: $gray, $amount: 50);
+        transition: fill 200ms ease-in;
       }
     }
   }

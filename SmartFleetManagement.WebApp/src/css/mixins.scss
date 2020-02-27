@@ -1,0 +1,30 @@
+@import "./colors.scss";
+
+@mixin inputWithUnderline($duration) {
+  width: 100%;
+
+  input {
+    margin-bottom: 1rem;
+    border: none;
+    border-bottom: 1px $light-gray solid;
+    border-radius: 0;
+    transition: color $duration ease-in-out;
+
+    &::placeholder {
+      transition: color 0.2s ease-in-out;
+      color: lighten($color: $gray, $amount: 50);
+    }
+
+    &:focus,
+    &:hover {
+      border-bottom: 1px $blue solid;
+      outline: 0px;
+      -webkit-appearance: none;
+      box-shadow: none;
+
+      &::placeholder {
+        color: $gray;
+      }
+    }
+  }
+}

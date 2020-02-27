@@ -36,20 +36,30 @@ const Login = () => {
       forgotPassword: false,
       login: true
     });
-  }
+  };
 
-  const renderForm = (
+  const onLoginHanlder = values => {
+    console.log(values);
+  };
+
+  const onResetHandler = values => {
+    console.log(values);
+  };
+
+  const Form = () => (
     <>
       {formState.login &&
         <LoginForm
           onCreateAccount={onCreateAccountHandler}
           onForgotPassword={onForgotPasswordHandler}
+          onLogin={onLoginHanlder}
         />
       }
 
       {formState.forgotPassword &&
         <ForgotPasswordForm
           onLoginAccount={onLoginAccountHandler}
+          onReset={onResetHandler}
         />
       }
 
@@ -70,7 +80,7 @@ const Login = () => {
               <LinkLanguageSelector />
             </div>
             <div className={styles.loginForm}>
-              {renderForm}
+              <Form />
             </div>
           </Col>
         </Row>

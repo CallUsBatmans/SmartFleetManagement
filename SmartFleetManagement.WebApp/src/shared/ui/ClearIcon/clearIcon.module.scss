@@ -1,0 +1,21 @@
+@import "../../../css/colors.scss";
+
+.clearIcon {
+  position: absolute;
+  top: 0.9rem;
+  right: 2.2rem;
+  font-size: 1.2em;
+
+  path {
+    fill: lighten($color: $gray, $amount: 50);
+    transition: fill 200ms ease-out;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    path {
+      fill: $gray;
+    }
+  }
+}

@@ -12,6 +12,15 @@
     "forgotPasswordSubtitle": "Veți primi un link pentru a crea o nouă parolă prin email",
     "usernameOrEmail": "Adresa de email sau numele de utilizator",
     "resetPassword": "Resetează parola",
-    "signIn": "Autentificare"
+    "signIn": "Autentificare",
+    "hidePassword": "Ascunde parola",
+    "showPassword": "Arată parola"
+  },
+  "validation": {
+    "required": "Câmpul este obligatoriu",
+    "email": "Adresa de email este invalidă"
+  },
+  "clearIcon": {
+    "clear": "Șterge"
   }
 }

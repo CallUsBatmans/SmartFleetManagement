@@ -9,6 +9,8 @@ i18n
   .init({
     lng: defaultLocale,
     debug: true,
+    nsSeparator: '::',
+    keySeparator: '.',
     interpolation: {
       escapeValue: false
     },

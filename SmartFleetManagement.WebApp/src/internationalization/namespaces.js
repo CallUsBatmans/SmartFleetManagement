@@ -1,5 +1,9 @@
-const login = "login";
+const login = 'login';
+const validation = 'validation';
+const clearIcon = 'clearIcon';
 
 export default {
-  login
+  login,
+  validation,
+  clearIcon
 };
