@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import styles from './loginForm.module.scss';
 import { useTranslation } from 'react-i18next';
 import namespaces from '../../../internationalization/namespaces';
-import { Form, InputGroup } from 'react-bootstrap';
-import { Button, Checkbox } from 'semantic-ui-react';
+import { Form, InputGroup, Button } from 'react-bootstrap';
+import { Checkbox } from 'semantic-ui-react';
 import LoginFormFooter from './LoginFormFooter/LoginFormFooter';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,18 +12,20 @@ import Tooltip from '../../../shared/ui/Tooltip/Tooltip';
 import * as yup from 'yup';
 import { Formik } from 'formik';
 import FieldValidator from '../../../shared/ui/FieldValidator/FieldValidator';
-import ClearIcon from '../../../shared/ui/ClearIcon/ClearIcon';
 
 const initialState = {
-  username: '',
+  email: '',
   password: '',
   rememberMe: false
 };
 
 const LoginForm = props => {
-  const { t } = useTranslation(namespaces.login)
-
+  const { t } = useTranslation(namespaces.login);
   const [showPassword, setShowPassword] = useState(false);
+
+  const onSubmitHandler = values => {
+    console.log(values);
+  };
 
   const showPasswordIcon = (
     <Tooltip content={showPassword ? t('hidePassword') : t('showPassword')}>
@@ -36,7 +38,7 @@ const LoginForm = props => {
   );
 
   const schema = yup.object({
-    username: yup.string().required(t('validation::required')),
+    email: yup.string().email(t('validation::email')).required(t('validation::required')),
     password: yup.string().required(t('validation::required'))
   });
 
@@ -44,15 +46,13 @@ const LoginForm = props => {
     <Formik
       validationSchema={schema}
       initialValues={initialState}
-      onSubmit={props.onLogin}
+      onSubmit={onSubmitHandler}
     >
       {({
         handleSubmit,
         handleChange,
-        handleBlur,
         values,
         touched,
-        isValid,
         errors,
         setFieldValue
       }) => (
@@ -61,17 +61,16 @@ const LoginForm = props => {
             <h5>{t('subtitle')}</h5>
             <Form.Group className={styles.customInput}>
               <Form.Control
-                type="text"
-                name="username"
-                autoComplete="username"
-                placeholder={t('username')}
-                size="lg"
+                type="email"
+                name="email"
+                autoComplete="email"
+                placeholder={t('email')}
+                size="md"
                 onChange={handleChange}
-                value={values.username}
-                isInvalid={touched.username && errors.username}
+                value={values.email}
+                isInvalid={touched.email && errors.email}
               />
-              {values.username && <ClearIcon onClear={() => setFieldValue('username', initialState.username)} />}
-              <FieldValidator error={errors.username} />
+              <FieldValidator error={errors.email} />
             </Form.Group>
             <Form.Group className={styles.customInput}>
               <InputGroup>
@@ -80,7 +79,7 @@ const LoginForm = props => {
                   name="password"
                   autoComplete="current-password"
                   placeholder={t('password')}
-                  size="lg"
+                  size="md"
                   aria-describedby="passwordPostpend"
                   onChange={handleChange}
                   value={values.password}
@@ -102,32 +101,20 @@ const LoginForm = props => {
                 label={t('rememberMe')}
               />
             </div>
-            <Button
-              type="submit"
-              fluid
-              className={styles.loginBtn}
-              color="blue"
-              size="large"
-            >
-              {t('login')}
-            </Button>
+            <Button type="submit" variant="dark">{t('login')}</Button>
             <LoginFormFooter
-              onCreateAccount={props.onCreateAccount}
-              onForgotPassword={props.onForgotPassword}
+              onCreateAccount={props.onRegister}
+              onForgotPassword={props.onViewChange}
             />
           </Form >
         )}
     </Formik>
-
-
-
   )
 };
 
 LoginForm.propTypes = {
-  onCreateAccount: PropTypes.func.isRequired,
-  onForgotPassword: PropTypes.func.isRequired,
-  onLogin: PropTypes.func.isRequired
+  onViewChange: PropTypes.func.isRequired,
+  onRegister: PropTypes.func.isRequired
 };
 
 export default LoginForm;

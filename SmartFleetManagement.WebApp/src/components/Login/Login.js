@@ -1,18 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './login.module.scss';
 import { Row, Col, Container } from 'react-bootstrap';
 import LoginForm from './LoginForm/LoginForm';
 import LinkLanguageSelector from '../../shared/ui/LanguageSelector/LinkLanguageSelector';
 import ForgotPasswordForm from './ForgotPasswordForm/ForgotPasswordForm';
+import RegisterForm from './RegisterForm/RegisterForm';
+import { withRouter } from 'react-router-dom';
+import { routing } from '../../helpers/routing';
 
 const initialState = {
   forgotPassword: false,
-  createAccount: false,
+  register: false,
   login: true
 };
 
-const Login = () => {
+const Login = props => {
   const [formState, setFormState] = useState(initialState);
+
   const updateState = object => {
     setFormState({
       ...formState,
@@ -20,50 +24,63 @@ const Login = () => {
     });
   };
 
-  const onCreateAccountHandler = () => {
+  useEffect(() => {
+    preferredAction();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  };
+  const preferredAction = () => {
+    const action = routing.getValueFromQueryString('action', props.location);
 
-  const onForgotPasswordHandler = () => {
+    if (action) {
+      setFormState({
+        [action]: true
+      });
+    }
+  }
+
+  const onForgotPasswordForm = () => {
     updateState({
       forgotPassword: true,
       login: false
     });
   };
 
-  const onLoginAccountHandler = () => {
+  const onRegisterAccountForm = () => {
+    updateState({
+      register: true,
+      login: false
+    });
+  }
+
+  const onShowLoginForm = () => {
     updateState({
       forgotPassword: false,
+      register: false,
       login: true
     });
-  };
-
-  const onLoginHanlder = values => {
-    console.log(values);
-  };
-
-  const onResetHandler = values => {
-    console.log(values);
   };
 
   const Form = () => (
     <>
       {formState.login &&
         <LoginForm
-          onCreateAccount={onCreateAccountHandler}
-          onForgotPassword={onForgotPasswordHandler}
-          onLogin={onLoginHanlder}
+          onViewChange={onForgotPasswordForm}
+          onRegister={onRegisterAccountForm}
         />
       }
 
       {formState.forgotPassword &&
         <ForgotPasswordForm
-          onLoginAccount={onLoginAccountHandler}
-          onReset={onResetHandler}
+          onViewChange={onShowLoginForm}
         />
       }
 
-      {formState.createAccount && <div></div>}
+      {formState.register &&
+        <RegisterForm
+          onViewChange={onShowLoginForm}
+        />
+      }
     </>
   );
 
@@ -89,4 +106,4 @@ const Login = () => {
   )
 };
 
-export default Login;
+export default withRouter(Login);

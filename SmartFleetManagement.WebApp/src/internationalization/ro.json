@@ -2,25 +2,28 @@
   "login": {
     "title": "Bun venit,",
     "subtitle": "vă rugăm să vă conectați la contul dvs.",
-    "username": "Utilizator",
+    "email": "Adresa de email",
     "password": "Parolă",
     "rememberMe": "Ține-mă minte",
     "login": "Autentificare",
     "forgotPassword": "Ai uitat parola?",
     "createAccount": "Creează un cont nou",
-    "forgotPasswordTitle": "Resetează parola",
-    "forgotPasswordSubtitle": "Veți primi un link pentru a crea o nouă parolă prin email",
-    "usernameOrEmail": "Adresa de email sau numele de utilizator",
-    "resetPassword": "Resetează parola",
-    "signIn": "Autentificare",
     "hidePassword": "Ascunde parola",
     "showPassword": "Arată parola"
+  },
+  "forgotPassword": {
+    "title": "Resetează parola",
+    "subtitle": "Veți primi un link pentru a crea o nouă parolă prin email",
+    "email": "Adresa de email sau numele de utilizator",
+    "resetPassword": "Resetează parola",
+    "signIn": "Autentificare"
   },
   "validation": {
     "required": "Câmpul este obligatoriu",
     "email": "Adresa de email este invalidă"
   },
   "clearIcon": {
-    "clear": "Șterge"
+    "clear": "Șterge",
+    "passwordNotMatch": "Parolele nu coincid"
   }
 }

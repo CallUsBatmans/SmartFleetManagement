@@ -2,23 +2,40 @@
   "login": {
     "title": "Welcome,",
     "subtitle": "please log in into your account",
-    "username": "Username",
+    "email": "Email address",
     "password": "Password",
     "rememberMe": "Remember me",
     "login": "Login",
-    "forgotPassword": "Forgot your password?",
-    "createAccount": "Create new account",
-    "forgotPasswordTitle": "Reset your password",
-    "forgotPasswordSubtitle": "You will receive a link to create a new password via email",
-    "usernameOrEmail": "Email address or Username",
-    "resetPassword": "Reset password",
-    "signIn": "Sign in",
     "hidePassword": "Hide password",
-    "showPassword": "Show password"
+    "showPassword": "Show password",
+    "createAccount": "Create new account",
+    "forgotPassword": "Forgot your password?"
+  },
+  "forgotPassword": {
+    "title": "Reset your password",
+    "subtitle": "You will receive a link to create a new password via email",
+    "email": "Email address or Username",
+    "resetPassword": "Reset password",
+    "signIn": "Sign in"
+  },
+  "register": {
+    "title": "Title",
+    "email": "Email",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "password": "Password",
+    "confirm": "Confirm password",
+    "tnc": "Terms and conditions",
+    "selectPlaceholder": "Please select",
+    "registerTitle": "Register",
+    "registerSubtitle": "Create your account. It's free and only takes a minute",
+    "submit": "Register account"
   },
   "validation": {
     "required": "Field is mandatory",
-    "email": "Email is invalid"
+    "email": "Email is invalid",
+    "passwordNotMatch": "Passwords no not match",
+    "minLength": "{0} should contain at least {1} characters"
   },
   "clearIcon": {
     "clear": "Clear"

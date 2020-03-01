@@ -1,0 +1,68 @@
+@import "../../../css/animations.scss";
+@import "../../../css/colors.scss";
+@import "../../../css/mixins.scss";
+
+.select {
+  position: relative;
+  width: 100%;
+
+  input {
+    cursor: pointer;
+  }
+
+  .icon {
+    background: none;
+    border: none;
+    margin: 0;
+    cursor: pointer;
+
+    svg {
+      font-size: 1em;
+      margin-top: 50%;
+
+      path {
+        fill: $gray;
+      }
+    }
+  }
+
+  .options {
+    @include slide();
+    position: absolute;
+    width: 100%;
+    border: 1px solid $light-gray;
+    border-radius: 0.2rem;
+    background: $white;
+    height: 250px;
+    z-index: 101;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    overflow-x: none;
+    overflow-y: auto;
+    -webkit-box-shadow: 0px 1px 10px 1px $light-gray;
+    -moz-box-shadow: 0px 1px 10px 1px $light-gray;
+    box-shadow: 0px 1px 10px 1px $light-gray;
+
+    ul {
+      text-align: left;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        padding: 0.8rem 0.5rem;
+        transition: background-color 50ms ease-out;
+        border-radius: 3%;
+        border-bottom: 1px dotted $light-gray;
+        transition: padding 200ms linear;
+
+        &:hover {
+          cursor: pointer;
+          padding-left: 1.2rem;
+          background-color: $dark-gray;
+          color: $white;
+        }
+      }
+    }
+  }
+}
