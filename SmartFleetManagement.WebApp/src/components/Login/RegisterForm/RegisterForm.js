@@ -53,7 +53,7 @@ const RegisterForm = props => {
             <h1>{t('registerTitle')}</h1>
             <h5>{t('registerSubtitle')}</h5>
             <Form.Group className={styles.customInput}>
-              <Select placeholder="Please select"
+              <Select placeholder={t('selectPlaceholder')}
                 name="title"
                 items={["item1", "item2", "item3"]}
                 onClick={result => setFieldValue('title', result.value)}

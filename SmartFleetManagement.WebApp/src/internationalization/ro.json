@@ -18,6 +18,18 @@
     "resetPassword": "Resetează parola",
     "signIn": "Autentificare"
   },
+  "register": {
+    "title": "Titlu",
+    "email": "Adresa de email",
+    "firstName": "Prenume",
+    "lastName": "Nume",
+    "password": "Parola",
+    "confirm": "Confirmă parola",
+    "selectPlaceholder": "Selectează",
+    "registerTitle": "Înregistrare",
+    "registerSubtitle": "Creeaza-ți contul. Este gratuit și durează doar un minut",
+    "submit": "Înregistrare cont"
+  },
   "validation": {
     "required": "Câmpul este obligatoriu",
     "email": "Adresa de email este invalidă"
