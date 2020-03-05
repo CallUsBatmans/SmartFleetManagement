@@ -7,7 +7,6 @@ import { Router } from 'react-router-dom';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n';
 
-// CSS
 import './index.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'semantic-ui-css/semantic.min.css';
@@ -19,7 +18,6 @@ const Loader = () => <div>loading...</div>;
 ReactDOM.render(
   <I18nextProvider i18n={i18n}>
     <Router history={history}>
-
       <Suspense fallback={<Loader />}>
         <App />
       </Suspense>

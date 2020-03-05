@@ -12,6 +12,7 @@ import Tooltip from '../../../shared/ui/Tooltip/Tooltip';
 import * as yup from 'yup';
 import { Formik } from 'formik';
 import FieldValidator from '../../../shared/ui/FieldValidator/FieldValidator';
+import { Redirect, useHistory } from 'react-router-dom';
 
 const initialState = {
   email: '',
@@ -21,10 +22,12 @@ const initialState = {
 
 const LoginForm = props => {
   const { t } = useTranslation(namespaces.login);
+  const history = useHistory();
+
   const [showPassword, setShowPassword] = useState(false);
 
   const onSubmitHandler = values => {
-    console.log(values);
+    history.push('/');
   };
 
   const showPasswordIcon = (
